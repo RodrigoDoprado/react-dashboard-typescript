@@ -1,0 +1,8 @@
+{
+  "name": "react-dashboard-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/RodrigoDoprado/react-dashboard-typescript.git",
+  "author": "rodrigodoprado <rodrigodoprado1992@gmail.com>",
+  "license": "MIT"
+}
