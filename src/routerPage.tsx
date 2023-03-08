@@ -19,12 +19,40 @@ export default function RouterPage() {
     return children
   }
 
+  const Notprivate = ({ children }: { children: JSX.Element }) => {
+    if (auth.user) {
+      return <Dashboard />
+    }
+    return children
+  }
+
   return (
     <Routes>
       {/* rota public */}
-      <Route path="/auth/login" element={<Login />} />
-      <Route path="/auth/register" element={<Register />} />
-      <Route path="/auth/password-recovery" element={<PasswordRecovery />} />
+      <Route
+        path="/auth/login"
+        element={
+          <Notprivate>
+            <Login />
+          </Notprivate>
+        }
+      />
+      <Route
+        path="/auth/register"
+        element={
+          <Notprivate>
+            <Register />
+          </Notprivate>
+        }
+      />
+      <Route
+        path="/auth/password-recovery"
+        element={
+          <Notprivate>
+            <PasswordRecovery />
+          </Notprivate>
+        }
+      />
       {/* rota Privada */}
       <Route
         path="*"
