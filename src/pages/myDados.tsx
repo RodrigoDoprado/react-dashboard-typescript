@@ -32,7 +32,9 @@ export default function MyData() {
                   <AvatarUser />
                 </div>
                 <hr />
-                <Register />
+                <div className="mb-1">
+                  <Register />
+                </div>
               </div>
             </div>
           </main>
