@@ -27,17 +27,14 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   }
 
   const signin = async (email: string, password: string) => {
-    const data = await api.signin(email, password)
-    if (data.token) {
+    await api.signin(email, password).then((data) => {
       // setUser(data.user);
       setToken(data.token)
-      return true
-    }
-    return false
+    })
   }
 
   const signout = async () => {
-    console.log("signout está sendo executada.")
+    // console.log("signout está sendo executada.")
     setUser(null)
     setToken("")
     await api.logout()

@@ -5,6 +5,4 @@ export type User = {
   lastName: string
   email: string
   telephone: string
-  password?: string
-  passwordConfirm?: string
 }

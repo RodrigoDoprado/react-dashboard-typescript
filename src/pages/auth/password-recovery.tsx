@@ -10,21 +10,6 @@ export default function PasswordRecovery() {
     setEmail(event.target.value)
   }
 
-  const passwordrecovery = async (data: string) => {
-    await useApi()
-      .passwordrecovery(data)
-      .then((response) => {
-        setStatus({ type: "success", message: response.data.message })
-      })
-      .catch((err) => {
-        if (err.response) {
-          setStatus({ type: "error", message: err.response.data.message })
-        } else {
-          setStatus({ type: "error", message: "Erro: Tente mais tarde!" })
-        }
-      })
-  }
-
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
     if (!email) {
@@ -60,7 +45,18 @@ export default function PasswordRecovery() {
         })
       })()
     } else {
-      passwordrecovery(email)
+      await useApi()
+        .passwordrecovery(email)
+        .then((response) => {
+          setStatus({ type: "success", message: response.data.message })
+        })
+        .catch((err) => {
+          if (err.response) {
+            setStatus({ type: "error", message: err.response.data.message })
+          } else {
+            setStatus({ type: "error", message: "Erro: Tente mais tarde!" })
+          }
+        })
     }
   }
 

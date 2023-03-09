@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext } from "react"
 import { Helmet } from "react-helmet"
+import { AuthContext } from "../contexts/AuthContexts"
 import Footer from "../componete/footer"
+import FormCreateUser from "../componete/formCreateUser"
 import Navbar from "../componete/navbar"
 import Sidebar from "../componete/sidebar"
-import { AuthContext } from "../contexts/AuthContexts"
 import AvatarUser from "./auth/avatarUser"
-import Register from "./auth/register"
 
 export default function MyData() {
   const { user } = useContext(AuthContext)
@@ -32,8 +32,18 @@ export default function MyData() {
                   <AvatarUser />
                 </div>
                 <hr />
-                <div className="mb-1">
-                  <Register />
+                <div id="layoutAuthentication">
+                  <div id="layoutAuthentication_content">
+                    <main>
+                      <div className="container">
+                        <div className="row ">
+                          <div className="mb-1">
+                            <FormCreateUser />
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  </div>
                 </div>
               </div>
             </div>

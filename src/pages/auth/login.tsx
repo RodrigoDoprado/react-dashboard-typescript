@@ -57,12 +57,14 @@ export const Login = () => {
         })
       })()
     } else {
-      const isLogged = await auth.signin(email, password)
-      if (isLogged) {
-        window.location.href = window.location.href
-      } else {
-        setStatus({ type: "error", message: "E-mail ou Senha Inválido!" })
-      }
+      await auth
+        .signin(email, password)
+        .then(() => {
+          window.location.href = window.location.href
+        })
+        .catch(() => {
+          setStatus({ type: "error", message: "E-mail ou Senha Inválido!" })
+        })
     }
   }
   return (
