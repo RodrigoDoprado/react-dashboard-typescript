@@ -7,7 +7,7 @@ export const api = axios.create({
 
 export const useApi = () => ({
   createUser: async (data: any) => {
-    const response = await api.post("/account/register", data)
+    const response = await api.post("/account/create", data)
     return response.data
   },
   passwordrecovery: async (data: any) => {

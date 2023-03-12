@@ -2,10 +2,10 @@
 import { useContext } from "react"
 import { Helmet } from "react-helmet"
 import { AuthContext } from "../contexts/AuthContexts"
-import Footer from "../componete/footer"
-import FormCreateUser from "../componete/formCreateUser"
-import Navbar from "../componete/navbar"
-import Sidebar from "../componete/sidebar"
+import Footer from "../componet/footer"
+import FormCreateUser from "../componet/formCreateUser"
+import Navbar from "../componet/navbar"
+import Sidebar from "../componet/sidebar"
 import AvatarUser from "./auth/avatarUser"
 
 export default function MyData() {

@@ -22,15 +22,7 @@ export default function FormCreateUser() {
   }
 
   const [state, setState] = useState(userNull)
-  const {
-    id,
-    firstName,
-    lastName,
-    telephone,
-    email,
-    password,
-    passwordConfirm,
-  } = state
+  const { id, firstName, lastName, telephone, email, password } = state
   const [status, setStatus] = useState({ type: "", message: "" })
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
@@ -55,8 +47,6 @@ export default function FormCreateUser() {
       .catch((err: { response: { data: { message: any } } }) => {
         if (err.response) {
           setStatus({ type: "error", message: err.response.data.message })
-        } else {
-          setStatus({ type: "error", message: "Erro: Tente mais tarde!" })
         }
       })
   }
@@ -231,7 +221,7 @@ export default function FormCreateUser() {
                   <label htmlFor="password">Senha</label>
                 </div>
               </div>
-              <div className="col-md-6">
+              {/* <div className="col-md-6">
                 <div className="form-floating mb-3 mb-md-0">
                   <input
                     className="form-control"
@@ -243,7 +233,7 @@ export default function FormCreateUser() {
                   />
                   <label htmlFor="passwordConfirm">Confirma Senha</label>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="mt-4 mb-0">
               <div className="d-grid">

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet"
-import FormCreateUser from "../../componete/formCreateUser"
+import FormCreateUser from "../../componet/formCreateUser"
 
 export default function Register() {
   return (

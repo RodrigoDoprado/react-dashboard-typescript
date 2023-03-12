@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet"
 import { useContext } from "react"
 import { AuthContext } from "../contexts/AuthContexts"
-import Footer from "../componete/footer"
-import Navbar from "../componete/navbar"
-import Sidebar from "../componete/sidebar"
+import Footer from "../componet/footer"
+import Navbar from "../componet/navbar"
+import Sidebar from "../componet/sidebar"
 
 export default function Dashboard() {
   const { user } = useContext(AuthContext)

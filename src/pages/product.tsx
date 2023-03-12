@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet"
-import Navbar from "../componete/navbar"
-import Sidebar from "../componete/sidebar"
+import Navbar from "../componet/navbar"
+import Sidebar from "../componet/sidebar"
 
 export default function Product() {
   return (
